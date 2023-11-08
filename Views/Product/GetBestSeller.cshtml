@@ -1,0 +1,26 @@
+﻿@model ProductVM
+
+@{
+    ViewData["Title"] = "Stores";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Product Id</th>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                    <tr>
+                        <td>@Model.product.Id</td>
+                        <td>@Model.product.ProductName</td>
+                        <td>@Model.quantity</td>
+                    </tr>
+            </tbody>
+    </table>
+
+}

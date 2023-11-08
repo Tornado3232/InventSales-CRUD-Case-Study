@@ -1,0 +1,29 @@
+﻿@model Sale
+<h1>
+Update Sale Record
+</h1>
+
+<form method="put" asp-controller="Sale" asp-action="Update" enctype="multipart/form-data">
+    <input type="hidden" value="ProductId" id="ProductId" />
+    <div class="form-group">
+        <label asp-for="ProductId">ProductId</label>
+        <input asp-for="ProductId" class="form-control" placeholder="ProductId" readonly>
+    </div>
+    <div class="form-group">
+        <label asp-for="StoreId">StoreId</label>
+        <input asp-for="StoreId" class="form-control" placeholder="StoreId" readonly>
+    </div>
+    <div class="form-group">
+        <label asp-for="Date">Date</label>
+        <input asp-for="Date" type="text" class="form-control" placeholder="Date" readonly>
+    </div>
+    <div class="form-group">
+        <label asp-for="SalesQuantity">SalesQuantity</label>
+        <input asp-for="SalesQuantity" class="form-control" placeholder="SalesQuantity">
+    </div>
+    <div class="form-group">
+        <label asp-for="Stock">Stock</label>
+        <input asp-for="Stock" class="form-control" placeholder="Stock">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

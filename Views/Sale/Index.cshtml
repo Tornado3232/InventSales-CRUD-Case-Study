@@ -1,0 +1,62 @@
+﻿@model List<Sale>
+
+@{
+    ViewData["Title"] = "Sales";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    <div>
+        <button type="button" class="btn btn-primary">
+            <a class="nav-link text-dark" asp-area="" asp-controller="SaleForm" asp-action="Index">Add New Sale</a>
+        </button>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Product Id</th>
+                <th scope="col">Store Id</th>
+                <th scope="col">Date</th>
+                <th scope="col">Sales Quantity</th>
+                <th scope="col">Stock</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var sale in Model)
+            {
+                <tr>
+                    <td>@sale.ProductId</td>
+                    <td>@sale.StoreId</td>
+                    <td>@sale.Date</td>
+                    <td>@sale.SalesQuantity</td>
+                    <td>@sale.Stock</td>
+                    <td>
+                    <a type="button" class="btn btn-sm btn-outline-info" 
+                            asp-controller="Sale" 
+                            asp-action="Find" 
+                            asp-route-ProductId="@sale.ProductId" 
+                            asp-route-StoreId="@sale.StoreId" 
+                            asp-route-date="@sale.Date.ToString()">
+                            Edit
+                    </a>
+                    </td>
+                    <td>
+                    <a type="button" class="btn btn-sm btn-outline-info" 
+                            asp-controller="Sale" 
+                            asp-action="Delete" 
+                            asp-route-ProductId="@sale.ProductId" 
+                            asp-route-StoreId="@sale.StoreId" 
+                            asp-route-date="@sale.Date.ToString()">
+                        Delete
+                    </a>
+                </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    
+
+
+
+}

@@ -1,0 +1,41 @@
+﻿@model List<Store>
+
+@{
+    ViewData["Title"] = "Stores";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    <div>
+        <button type="button" class="btn btn-primary">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Store" asp-action="GetMostProfit">Most Profitable Store</a>
+        </button>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Store Id</th>
+                <th scope="col">Store Name</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var store in Model)
+            {
+                <tr>
+                    <td>@store.Id</td>
+                    <td>@store.StoreName</td>
+                    <td>
+                    <a type="button" class="btn btn-sm btn-outline-info"
+                        asp-controller="Store"
+                        asp-action="GetProfit"
+                        asp-route-Id="@store.Id">
+                        Profit
+                    </a>
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+
+}

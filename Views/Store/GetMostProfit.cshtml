@@ -1,0 +1,26 @@
+﻿@model Store
+
+@{
+    ViewData["Title"] = "Stores";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Store Id</th>
+                    <th scope="col">Store Name</th>
+                    <th scope="col">Profit</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                    <tr>
+                        <td>@Model.Id</td>
+                        <td>@Model.StoreName</td>
+                        <td>@Model.Profit</td>
+                    </tr>
+            </tbody>
+    </table>
+
+}

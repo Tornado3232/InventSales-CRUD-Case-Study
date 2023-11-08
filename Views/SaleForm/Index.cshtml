@@ -1,0 +1,40 @@
+﻿@model SaleForm
+
+@{
+    ViewData["Title"] = "SaleForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+ 
+    <h1>Add New Sale</h1>
+    @using (Html.BeginForm("Add", "Sale"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m =>m.Sale.ProductId)
+        @Html.TextBoxFor(m => m.Sale.ProductId, new { @class="form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m =>m.Sale.StoreId)
+        @Html.TextBoxFor(m => m.Sale.StoreId, new { @class="form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m =>m.Sale.Date)
+
+        @Html.TextBoxFor(m => m.Sale.Date,    new { @class="form-control", @type = "date"})
+
+
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m =>m.Sale.SalesQuantity)
+        @Html.TextBoxFor(m => m.Sale.SalesQuantity, new { @class="form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m =>m.Sale.Stock)
+        @Html.TextBoxFor(m => m.Sale.Stock, new { @class="form-control"})
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+   }
+
+
+}
